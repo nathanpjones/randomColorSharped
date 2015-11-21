@@ -2,55 +2,22 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
-using System.Text;
-using System.Windows;
-using System.Windows.Media;
+
+#if WPF
+    using Point = System.Windows.Point;
+    using Color = System.Windows.Media.Color;
+#elif FORMS
+    using Point = System.Drawing.Point;
+    using Color = System.Drawing.Color;
+#else
+    ERROR
+#endif
 
 namespace RandomColorGenerator
 {
-    [DebuggerDisplay(@"\{{Lower},{Upper}\}")]
-    internal class Range
-    {
-        public int Lower { get; set; }
-        public int Upper { get; set; }
-
-        public Range()
-        { }
-        public Range(int lower, int upper)
-        {
-            Lower = lower;
-            Upper = upper;
-        }
-        public int this[int index]
-        {
-            get
-            {
-                switch (index)
-                {
-                    case 0: return Lower;
-                    case 1: return Upper;
-                    default: throw new ArgumentOutOfRangeException();
-                }
-            }
-            set
-            {
-                switch (index)
-                {
-                    case 0: Lower = value; break;
-                    case 1: Upper = value; break;
-                    default: throw new ArgumentOutOfRangeException();
-                }
-            }
-        }
-
-        internal static Range ToRange(int[] range)
-        {
-            if (range == null) return null;
-            Debug.Assert(range.Length == 2);
-            return new Range(range[0], range[1]);
-        }
-    }
-
+    /// <summary>
+    /// Generates random numbers.
+    /// </summary>
     public static class RandomColor
     {
         private class DefinedColor
@@ -62,8 +29,7 @@ namespace RandomColorGenerator
         }
 
         private static readonly Dictionary<ColorScheme, DefinedColor> ColorDictionary = new Dictionary<ColorScheme, DefinedColor>();
-
-        private readonly static object LockObj = new object();
+        private static readonly object LockObj = new object();
         private static Random _rng = new Random();
 
         static RandomColor()
@@ -72,6 +38,11 @@ namespace RandomColorGenerator
             LoadColorBounds();
         }
 
+        /// <summary>
+        /// Gets a new random color.
+        /// </summary>
+        /// <param name="scheme">Which color schemed to use when generating the color.</param>
+        /// <param name="luminosity">The desired luminosity of the color.</param>
         public static Color GetColor(ColorScheme scheme, Luminosity luminosity)
         {
             int H, S, B;
@@ -89,6 +60,12 @@ namespace RandomColorGenerator
             return HsvToColor(H, S, B);
         }
 
+        /// <summary>
+        /// Generates multiple random colors.
+        /// </summary>
+        /// <param name="scheme">Which color schemed to use when generating the color.</param>
+        /// <param name="luminosity">The desired luminosity of the color.</param>
+        /// <param name="count">How many colors to generate</param>
         public static Color[] GetColors(ColorScheme scheme, Luminosity luminosity, int count)
         {
             var ret = new Color[count];
@@ -99,9 +76,13 @@ namespace RandomColorGenerator
             return ret;
         }
 
+        /// <summary>
+        /// Generate one color for each of the provided generator options.
+        /// </summary>
+        /// <param name="options">List of options to use when creating colors.</param>
         public static Color[] GetColors(params Options[] options)
         {
-            if (options == null) throw new ArgumentNullException("options");
+            if (options == null) throw new ArgumentNullException(nameof(options));
 
             return options.Select(o => GetColor(o.ColorScheme, o.Luminosity)).ToArray();
         }
@@ -343,6 +324,9 @@ namespace RandomColorGenerator
                 );
         }
 
+        /// <summary>
+        /// Converts hue, saturation, and lightness to a color.
+        /// </summary>
         public static Color HsvToColor(int hue, int saturation, double value)
         {
             // this doesn't work for the values of 0 and 360
@@ -380,46 +364,12 @@ namespace RandomColorGenerator
                 case 4: r = t; g = p; b = v; break;
                 case 5: r = v; g = p; b = q; break;
             }
-            var c = Color.FromRgb((byte)Math.Floor(r * 255.0),
-                                  (byte)Math.Floor(g * 255.0),
-                                  (byte)Math.Floor(b * 255.0));
+            var c = Color.FromArgb(255,
+                                   (byte)Math.Floor(r * 255.0),
+                                   (byte)Math.Floor(g * 255.0),
+                                   (byte)Math.Floor(b * 255.0));
 
             return c;
-        }
-    }
-
-    public enum ColorScheme
-    {
-        Random,
-        Monochrome,
-        Red,
-        Orange,
-        Yellow,
-        Green,
-        Blue,
-        Purple,
-        Pink
-    }
-
-    public enum Luminosity
-    {
-        Random,
-        Dark,
-        Light,
-        Bright,
-    }
-
-    public class Options
-    {
-        public ColorScheme ColorScheme { get; set; }
-        public Luminosity Luminosity { get; set; }
-
-        public Options()
-        {}
-        public Options(ColorScheme scheme, Luminosity luminosity)
-        {
-            ColorScheme = scheme;
-            Luminosity = luminosity;
         }
     }
 }
