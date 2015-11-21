@@ -23,4 +23,21 @@ Or you can generate multiple colors in a single go.
 var colors = RandomColor.GetColors(ColorScheme.Red, Luminosity.Light, 25);
 ```
 
-Enjoy!
+# Installing
+
+randomColorSharped is made available as two NuGet packages depending on your needs.
+
+#### For WinForms
+
+[randomColorSharped.Forms](https://www.nuget.org/packages/randomColorSharped.Forms/) (uses `System.Drawing`)
+
+```batch
+Install-Package randomColorSharped.Forms
+```
+
+#### For WPF
+[randomColorSharped.WPF](https://www.nuget.org/packages/randomColorSharped.WPF/) (uses `System.Windows`)
+
+```batch
+Install-Package randomColorSharped.WPF
+```
