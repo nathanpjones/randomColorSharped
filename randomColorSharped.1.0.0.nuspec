@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <metadata>
+        <id>randomColorSharped</id>
+        <version>1.0.0</version>
+        <authors>nathanpjones,Hrusikesh Panda</authors>
+        <owners>nathanpjones</owners>
+        <licenseUrl>https://github.com/nathanpjones/randomColorSharped/blob/master/LICENSE</licenseUrl>
+        <projectUrl>https://github.com/nathanpjones/randomColorSharped</projectUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>This is a port to c# (.NET 4.0) of https://github.com/davidmerfield/randomColor, David Merfield's javascript random color generator.
+
+This was ported by Nathan Jones so that users of the .NET family of languages could enjoy these attractive colors.</description>
+        <summary>This is a port to c# (.NET 4.0) of randomColor, David Merfield's javascript random color generator.</summary>
+    </metadata>
+    <files>
+        <file src="RandomColor\bin\Debug\RandomColorGenerator.dll" target="lib\net40\RandomColorGenerator.dll" />
+    </files>
+</package>
