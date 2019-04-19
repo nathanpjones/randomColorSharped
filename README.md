@@ -1,5 +1,4 @@
-randomColorSharped
-==================
+# randomColorSharped
 
 This is a port to c# (.NET 4.0) of [randomColor](https://github.com/davidmerfield/randomColor), David Merfield's javascript random color generator. This was ported by [Nathan Jones](http://www.nathanpjones.com/) so that users of the .NET family of languages could enjoy these attractive colors.
 
@@ -7,7 +6,7 @@ I saw this project linked on [Scott Hanselman's](http://www.hanselman.com/) exce
 
 A simple demo in WPF is included so you can play with the various combinations.
 
-![](https://github.com/nathanpjones/randomColorSharped/blob/master/RandomColorDemoScreenshot.png)
+![Screenshot](https://github.com/nathanpjones/randomColorSharped/blob/master/RandomColorDemoScreenshot.png)
 
 Getting a single color is a simple matter.
 
@@ -23,11 +22,11 @@ Or you can generate multiple colors in a single go.
 var colors = RandomColor.GetColors(ColorScheme.Red, Luminosity.Light, 25);
 ```
 
-# Installing
+## Installing
 
 randomColorSharped is made available as two NuGet packages depending on your needs.
 
-#### For WinForms
+### For WinForms
 
 [randomColorSharped.Forms](https://www.nuget.org/packages/randomColorSharped.Forms/) (uses `System.Drawing`)
 
@@ -35,7 +34,8 @@ randomColorSharped is made available as two NuGet packages depending on your nee
 Install-Package randomColorSharped.Forms
 ```
 
-#### For WPF
+### For WPF
+
 [randomColorSharped.WPF](https://www.nuget.org/packages/randomColorSharped.WPF/) (uses `System.Windows`)
 
 ```batch
