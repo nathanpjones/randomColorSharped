@@ -123,14 +123,14 @@ namespace RandomColorGenerator
 
         private static int PickSaturation(int hue, Luminosity luminosity, ColorScheme scheme)
         {
-            if (luminosity == Luminosity.Random)
-            {
-                return RandomWithin(0, 100);
-            }
-
             if (scheme == ColorScheme.Monochrome)
             {
                 return 0;
+            }
+
+            if (luminosity == Luminosity.Random)
+            {
+                return RandomWithin(0, 100);
             }
 
             var saturationRange = GetColorInfo(hue).SaturationRange;
