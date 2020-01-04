@@ -83,7 +83,7 @@ namespace RandomColorSample
             GeneratedColorsListBox.Items.Clear();
             foreach (var c in colors)
             {
-                GeneratedColorsListBox.Items.Add(new SolidColorBrush(c));
+                GeneratedColorsListBox.Items.Add(new SolidColorBrush(Splat.ColorExtensions.ToNative(c)));
             }
             GeneratedColorsListBox.EndInit();
         }
