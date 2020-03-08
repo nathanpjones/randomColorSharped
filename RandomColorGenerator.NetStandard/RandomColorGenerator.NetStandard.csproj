@@ -20,6 +20,14 @@ Thanks also to Hrusikesh Panda.</Description>
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Include="..\Common\ColorScheme.cs" Link="ColorScheme.cs" />
+    <Compile Include="..\Common\Luminosity.cs" Link="Luminosity.cs" />
+    <Compile Include="..\Common\Options.cs" Link="Options.cs" />
+    <Compile Include="..\Common\RandomColor.cs" Link="RandomColor.cs" />
+    <Compile Include="..\Common\Range.cs" Link="Range.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Include="..\LICENSE">
       <Pack>True</Pack>
       <PackagePath></PackagePath>

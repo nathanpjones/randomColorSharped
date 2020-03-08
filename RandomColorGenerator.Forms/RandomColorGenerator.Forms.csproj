@@ -2,7 +2,7 @@
   <PropertyGroup>
     <TargetFramework>net40</TargetFramework>
     <RuntimeIdentifiers>win</RuntimeIdentifiers>
-    <PackageId>randomColorSharped.WPF</PackageId>
+    <PackageId>randomColorSharped.Forms</PackageId>
     <Authors>Nathan P Jones</Authors>
     <Company>Nathan P Jones</Company>
     <Description>Generates attractive random colors.
@@ -10,7 +10,7 @@
 This is a port to .NET of randomColor (https://github.com/davidmerfield/randomColor), David Merfield&amp;apos;s javascript random color generator.
 
 Thanks also to Hrusikesh Panda.</Description>
-    <PackageTags>random color wpf</PackageTags>
+    <PackageTags>random color forms</PackageTags>
     <RepositoryUrl>https://github.com/nathanpjones/randomColorSharped.git</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageProjectUrl>https://github.com/nathanpjones/randomColorSharped</PackageProjectUrl>
@@ -18,19 +18,24 @@ Thanks also to Hrusikesh Panda.</Description>
     <Copyright>Copyright 2014-2020 - Nathan P Jones</Copyright>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <DefineConstants>TRACE;WPF</DefineConstants>
+    <DefineConstants>TRACE;FORMS</DefineConstants>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DefineConstants>TRACE;WPF</DefineConstants>
+    <DefineConstants>TRACE;FORMS</DefineConstants>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="..\Common\ColorScheme.cs" Link="ColorScheme.cs" />
+    <Compile Include="..\Common\Luminosity.cs" Link="Luminosity.cs" />
+    <Compile Include="..\Common\Options.cs" Link="Options.cs" />
+    <Compile Include="..\Common\RandomColor.cs" Link="RandomColor.cs" />
+    <Compile Include="..\Common\Range.cs" Link="Range.cs" />
+  </ItemGroup>
+
   <ItemGroup>
     <None Include="..\LICENSE">
       <Pack>True</Pack>
       <PackagePath></PackagePath>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <Reference Include="PresentationCore" />
-    <Reference Include="WindowsBase" />
   </ItemGroup>
 </Project>

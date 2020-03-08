@@ -111,8 +111,8 @@
     <AppDesigner Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\RandomColor\RandomColorGenerator.WPF.csproj">
-      <Project>{10301772-2b5a-47b3-8883-9877eb18fb12}</Project>
+    <ProjectReference Include="..\RandomColorGenerator.WPF\RandomColorGenerator.WPF.csproj">
+      <Project>{997e28e6-e4f7-4b83-9b91-7a7909e4eebd}</Project>
       <Name>RandomColorGenerator.WPF</Name>
     </ProjectReference>
   </ItemGroup>
