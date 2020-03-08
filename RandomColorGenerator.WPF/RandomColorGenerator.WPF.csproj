@@ -16,6 +16,8 @@ Thanks also to Hrusikesh Panda.</Description>
     <PackageProjectUrl>https://github.com/nathanpjones/randomColorSharped</PackageProjectUrl>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <Copyright>Copyright 2014-2020 - Nathan P Jones</Copyright>
+    <Version>1.0.1</Version>
+    <Product>randomColorSharped.WPF</Product>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
     <DefineConstants>TRACE;WPF</DefineConstants>
