@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
@@ -16,7 +16,7 @@ Thanks also to Hrusikesh Panda.</Description>
     <RepositoryType>git</RepositoryType>
     <PackageTags>random color netstandard</PackageTags>
     <DocumentationFile></DocumentationFile>
-    <Copyright>Copyright 2014-2020 - Nathan P Jones</Copyright>
+    <Copyright>Copyright 2020 - Nathan P Jones</Copyright>
   </PropertyGroup>
 
   <ItemGroup>
