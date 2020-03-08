@@ -6,7 +6,7 @@ using System.Linq;
 #if WPF
     using Point = System.Windows.Point;
     using Color = System.Windows.Media.Color;
-#elif FORMS
+#elif NETSTANDARD || FORMS
     using Point = System.Drawing.Point;
     using Color = System.Drawing.Color;
 #else

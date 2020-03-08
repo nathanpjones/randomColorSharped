@@ -1,0 +1,29 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <Authors>Nathan P Jones</Authors>
+    <PackageId>randomColorSharped.NetStandard</PackageId>
+    <Product>randomColorSharped.NetStandard</Product>
+    <Description>Generates attractive random colors.
+        
+This is a port to .NET of randomColor (https://github.com/davidmerfield/randomColor), David Merfield&amp;apos;s javascript random color generator.
+
+Thanks also to Hrusikesh Panda.</Description>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <PackageProjectUrl>https://github.com/nathanpjones/randomColorSharped</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/nathanpjones/randomColorSharped.git</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>random color netstandard</PackageTags>
+    <DocumentationFile></DocumentationFile>
+    <Copyright>Copyright 2014-2020 - Nathan P Jones</Copyright>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\LICENSE">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
+
+</Project>
