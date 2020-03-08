@@ -17,6 +17,7 @@ Thanks also to Hrusikesh Panda.</Description>
     <PackageTags>random color netstandard</PackageTags>
     <DocumentationFile></DocumentationFile>
     <Copyright>Copyright 2020 - Nathan P Jones</Copyright>
+    <Version>1.0.2</Version>
   </PropertyGroup>
 
   <ItemGroup>
